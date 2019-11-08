@@ -1,0 +1,75 @@
+require:
+  - rubocop-performance
+  - rubocop-rspec
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - 'vendor/bundle/**/*'
+    - 'node_modules/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Lint/AmbiguousOperator:
+  Exclude:
+    - 'exe/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+    - 'lib/tasks/**/*'
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - '*.gemspec'
+    - 'lib/tasks/**/*'
+
+Naming/AccessorMethodName:
+  Exclude:
+    - 'app/datatables/**/*'
+
+Naming/FileName:
+  Exclude:
+    - 'spec/support/**/*'
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Max: 20
+
+RSpec/NestedGroups:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/StringLiterals:
+  Exclude:
+    - 'features/step_definitions/**/*'

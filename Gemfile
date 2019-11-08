@@ -62,3 +62,11 @@ gem 'hiredis'
 gem 'haml-rails'
 
 gem 'simple_form'
+
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+  gem 'rails-controller-testing', require: false
+  gem 'rspec-its'
+  gem 'rspec_junit_formatter'
+  gem 'shoulda-matchers', require: false
+end

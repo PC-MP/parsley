@@ -69,6 +69,8 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
       dry-schema (~> 1.0)
     crass (1.0.5)
+    ddtrace (0.28.0)
+      msgpack
     deep_merge (1.2.1)
     dotenv (2.7.5)
     dotenv-rails (2.7.5)
@@ -251,6 +253,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
   config
+  ddtrace
   dotenv-rails
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)

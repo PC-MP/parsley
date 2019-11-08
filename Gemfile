@@ -56,3 +56,4 @@ gem 'config'
 gem 'dotenv-rails'
 
 gem 'sentry-raven'
+gem 'ddtrace'

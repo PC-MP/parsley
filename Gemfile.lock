@@ -58,6 +58,9 @@ GEM
       zeitwerk (~> 2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (2.6.5)
+      activerecord (>= 2.3.0)
+      rake (>= 0.8.7)
     aruba (0.14.12)
       childprocess (>= 0.6.3, < 4.0.0)
       contracts (~> 0.9)
@@ -371,6 +374,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   aruba
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.2)

@@ -17,3 +17,6 @@ require("turbolinks").start()
 import 'bootstrap'
 import '@fortawesome/fontawesome-free/js/all'
 import '../src/application.scss'
+
+require( 'datatables.net-bs4' )();
+require( 'datatables.net-rowgroup-bs4' )();

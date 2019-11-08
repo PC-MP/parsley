@@ -101,3 +101,6 @@ gem 'acts_as_paranoid'
 gem 'kaminari'
 
 gem 'pundit'
+
+gem 'ajax-datatables-rails'
+gem 'draper'

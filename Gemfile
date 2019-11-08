@@ -78,3 +78,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'aruba'
 end
+
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'faker', require: false
+  gem 'faker-japanese', require: false
+end

@@ -60,3 +60,5 @@ gem 'ddtrace'
 gem 'redis'
 gem 'hiredis'
 gem 'haml-rails'
+
+gem 'simple_form'

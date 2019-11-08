@@ -88,3 +88,7 @@ end
 group :development, :test do
   gem 'annotate'
 end
+
+group :development, :test do
+  gem 'reek'
+end

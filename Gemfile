@@ -99,3 +99,5 @@ gem 'devise-i18n'
 gem 'acts_as_paranoid'
 
 gem 'kaminari'
+
+gem 'pundit'

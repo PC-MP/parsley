@@ -2,6 +2,7 @@
 
 # MyController
 class MyController < ApplicationController
+  include Pundit
   include DeviseUserLoginHelper
 
   before_action :authenticate_user!

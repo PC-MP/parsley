@@ -50,3 +50,5 @@ group :development, :test do
   gem 'rubocop-rspec'
   gem 'rubocop-performance'
 end
+
+gem 'config'

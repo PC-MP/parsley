@@ -54,3 +54,5 @@ end
 gem 'config'
 
 gem 'dotenv-rails'
+
+gem 'sentry-raven'

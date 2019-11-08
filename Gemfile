@@ -70,3 +70,11 @@ group :development, :test do
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers', require: false
 end
+
+group :development, :test do
+  gem 'cucumber-rails', require: false
+  gem 'webdrivers'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'aruba'
+end

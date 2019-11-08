@@ -1,0 +1,18 @@
+#header{
+  z-index: 100;
+}
+
+#side_menu_div { 
+  min-height: 100%;
+}
+
+#main_contents_div { 
+  min-height: 100%;
+
+  #main_contents{
+    min-height: 100%;
+    padding-top: 60px;
+    margin-bottom: -20px;
+    padding-bottom: 30px;
+  }
+}

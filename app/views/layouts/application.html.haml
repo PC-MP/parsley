@@ -1,11 +1,19 @@
 !!!
-%html
+%html{ lang: 'ja' }
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Parsley
+    %meta{ http: { equiv: 'Content-Type' }, content: 'text/html; charset=UTF-8' }/
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no' }/
+    %meta{ name: 'format-detection', content: 'telephone=no,address=no,email=no' }/
+    %meta{ http: { equiv: 'x-ua-compatible' }, content: 'ie=edge' }/
+    %title<
+      = t 'app_name'
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', 'data-turbolinks-track' => 'reload', media: 'all'
+    = stylesheet_pack_tag 'application' # , 'data-turbolinks-track' => 'reload'
+    = yield :stylesheet_links
+    = javascript_pack_tag 'application' # , 'data-turbolinks-track' => 'reload'
+    = yield :javascript_links
+
   %body
-    = yield
+    = content_for?(:application_content) ? yield(:application_content) : yield

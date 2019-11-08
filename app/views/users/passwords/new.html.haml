@@ -1,11 +1,11 @@
-%h2= t(".forgot_your_password")
+%h2
+  = t('devise.passwords.new.forgot_your_password')
+
+= render 'shared/alerts'
+
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-  = f.error_notification
   .form-inputs
-    = f.input :email,                       |
-      required: true,                       |
-      autofocus: true,                      |
-      input_html: { autocomplete: "email" } |
+    = f.input :email, autofocus: true
   .form-actions
-    = f.button :submit, t(".send_me_reset_password_instructions")
-= render "users/shared/links"
+    = f.button :button, class: 'btn-primary btn-block' do
+      = t 'devise.passwords.new.send_me_reset_password_instructions'

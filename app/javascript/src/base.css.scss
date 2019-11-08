@@ -1,0 +1,26 @@
+html,body {
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+#footer {
+  width: 100%;
+  margin: 0.4rem;
+  text-align: center;
+  font: {
+    size: 0.6rem;
+  }
+  color: gray
+}
+
+.copylight {
+  margin: 0px;
+}
+
+.version_no {
+  float: right;
+  margin: 0px;
+}

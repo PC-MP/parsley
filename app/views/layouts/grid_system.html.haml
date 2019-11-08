@@ -1,0 +1,18 @@
+- content_for :application_content do
+  - unless defined?(header) && header == false
+    %header#header
+      = render partial: '/layouts/navbar'
+  .container-fluid.h-100
+    .row.h-100
+      #side_menu_div.col-sm-3.bg-light
+        - unless defined?(header) && header == false
+          %div{ style: 'margin-bottom: 60px;' }
+        #side_menu.pt-3
+          = render partial: 'layouts/side_menu'
+      #main_contents_div.col-sm-9
+        #main_contents
+          = content_for?(:content) ? yield(:content) : yield
+        %footer#footer.mt-auto
+          = render partial: 'layouts/footer'
+
+= render template: 'layouts/application'

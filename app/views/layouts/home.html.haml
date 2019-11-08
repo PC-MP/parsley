@@ -1,0 +1,13 @@
+- content_for :application_content do
+  - unless defined?(header) && header == false
+    %header#header
+      = render partial: '/layouts/navbar'
+  .container-fluid.h-100
+    .row.h-100
+      #main_contents_div.col
+        #main_contents
+          = content_for?(:content) ? yield(:content) : yield
+        %footer#footer.mt-auto
+          = render partial: 'layouts/footer'
+
+= render template: 'layouts/application'

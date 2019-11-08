@@ -1,16 +1,14 @@
-%h2= t(".change_your_password")
+%h2
+  = t('devise.passwords.edit.change_your_password')
+
+= render 'shared/alerts'
+
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
   = f.input :reset_password_token, as: :hidden
   = f.full_error :reset_password_token
   .form-inputs
-    = f.input :password,                                                                                               |
-      label: t(".new_password"),                                                                                       |
-      required: true,                                                                                                  |
-      autofocus: true,                                                                                                 |
-      hint: (t('devise.shared.minimum_password_length', count: @minimum_password_length) if @minimum_password_length), |
-      input_html: { autocomplete: "new-password" }                                                                     |
-    = f.input :password_confirmation, label: t(".confirm_new_password"), required: true
+    = f.input :password, label: t('devise.passwords.edit.new_password'), required: true, autofocus: true
+    = f.input :password_confirmation, label: t('devise.passwords.edit.confirm_new_password'), required: true
   .form-actions
-    = f.button :submit, t(".change_my_password")
-= render "users/shared/links"
+    = f.button :button, class: 'btn-primary btn-block' do
+      = t 'devise.passwords.edit.change_my_password'

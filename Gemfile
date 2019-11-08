@@ -104,3 +104,7 @@ gem 'pundit'
 
 gem 'ajax-datatables-rails'
 gem 'draper'
+
+group :development, :test do
+  gem 'rails_best_practices'
+end

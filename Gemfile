@@ -57,3 +57,5 @@ gem 'dotenv-rails'
 
 gem 'sentry-raven'
 gem 'ddtrace'
+gem 'redis'
+gem 'hiredis'

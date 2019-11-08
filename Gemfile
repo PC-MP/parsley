@@ -92,3 +92,6 @@ end
 group :development, :test do
   gem 'reek'
 end
+
+gem 'devise'
+gem 'devise-i18n'

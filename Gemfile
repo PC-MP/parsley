@@ -108,3 +108,7 @@ gem 'draper'
 group :development, :test do
   gem 'rails_best_practices'
 end
+
+group :development do
+  gem 'rails-erd'
+end

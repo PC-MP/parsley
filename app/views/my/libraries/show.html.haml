@@ -1,0 +1,56 @@
+.dropdown.my-2
+  = link_to '#', class: 'btn btn-outline-secondary dropdown-toggle btn-lg btn-block text-left', role: :button, id: 'librarySelectDropdownMenuLink', data: { toggle: :dropdown }, aria: { haspopup: true, expanded: false } do
+    = @library.name
+
+  .dropdown-menu.w-100{ aria: { labelledby: 'librarySelectDropdownMenuLink' } }
+    - @libraries.each do |library|
+      - next if library == @library
+      = link_to my_library_path(library), class: 'dropdown-item' do
+        = library.name
+
+    = link_to new_my_settings_library_path, class: 'dropdown-item' do
+      %i.fa.fa-plus
+      = t 'actions.create_my_library', model_name: Library.model_name.human
+
+= link_to '#', class: 'my-3 d-block' do
+  .card.border-primary
+    .card-body
+      %h2.my-0.py-3
+        %i.fa.fa-book
+        本を借りる
+
+= link_to '#', class: 'my-3 d-block' do
+  .card
+    .card-body
+      %h2.my-0.py-3
+        本を返す
+
+= link_to '#', class: 'my-3 d-block' do
+  .card
+    .card-body
+      %h2.my-0.py-3
+        本を探す
+
+
+
+= link_to destroy_user_session_path, class: 'dropdown-item', method: :delete do
+  %i.fa.fa-power-off
+  = t '.sign_out'
+
+- @library.book_stocks.each do |book_stock|
+  .card
+    .row.no-gutters
+      .col-md-4
+        = image_tag book_stock.book.image_url
+      .col-md-8
+        .card-body
+          %h5.card-title
+            = book_stock.book.title
+            .badge.badge-pill.badge-info
+              = book_stock.stock
+          %p.card-text
+
+
+= link_to new_my_library_book_stock_path(library_id: @library.id), class: 'btn btn-outline-secondary btn-lg btn-block', role: :button do
+  %i.fa.fa-plus
+  = t '.add_book_stock_button'

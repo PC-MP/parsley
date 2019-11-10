@@ -42,73 +42,52 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 # gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'rails-i18n'
 group :development, :test do
   gem 'rubocop', '0.78.0'
   gem 'rubocop-checkstyle_formatter', require: false
   gem 'rubocop-junit-formatter'
   gem 'rubocop-rspec'
   gem 'rubocop-performance'
-end
-
-gem 'config'
-
-gem 'dotenv-rails'
-
-gem 'sentry-raven'
-gem 'ddtrace'
-gem 'redis'
-gem 'hiredis'
-gem 'haml-rails'
-
-gem 'simple_form'
-
-group :development, :test do
   gem 'rspec-rails', '~> 3.8'
   gem 'rails-controller-testing', require: false
   gem 'rspec-its'
   gem 'rspec_junit_formatter'
   gem 'shoulda-matchers', require: false
-end
-
-group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'webdrivers'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'aruba'
-end
-
-group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker', require: false
   gem 'faker-japanese', require: false
-end
-
-group :development, :test do
   gem 'annotate'
-end
-
-group :development, :test do
   gem 'reek'
-end
-
-gem 'devise'
-gem 'devise-i18n'
-
-gem 'acts_as_paranoid'
-
-gem 'kaminari'
-
-gem 'pundit'
-
-gem 'ajax-datatables-rails'
-gem 'draper'
-
-group :development, :test do
   gem 'rails_best_practices'
+  gem 'simplecov'
 end
 
 group :development do
   gem 'rails-erd'
 end
+
+gem 'rails-i18n'
+gem 'config'
+gem 'dotenv-rails'
+gem 'sentry-raven'
+gem 'ddtrace'
+gem 'redis'
+gem 'hiredis'
+gem 'haml-rails'
+gem 'simple_form'
+gem 'devise'
+gem 'devise-i18n'
+gem 'acts_as_paranoid'
+gem 'kaminari'
+gem 'pundit'
+gem 'ajax-datatables-rails'
+gem 'draper'
+gem 'omniauth-slack'
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'jsonpath'

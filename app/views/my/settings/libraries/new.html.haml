@@ -1,0 +1,13 @@
+%h1.h3.mt-2
+  = t 'actions.create_my_library'
+
+.card
+  = simple_form_for [:my, :settings, @library] do |f|
+    .card-body.pt-2.px-3.pb-0
+      = f.input :name
+    .card-fotter.p-2.border-top
+      = f.button :button, class: 'btn btn-block btn-lg btn-primary' do
+        = t 'actions.create_for', model_name: Library.model_name.human
+
+= link_to :back, class: 'btn btn-outline-secondary btn-block mt-3 border-light', role: :button do
+  = t 'actions.back'

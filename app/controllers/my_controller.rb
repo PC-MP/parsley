@@ -6,5 +6,8 @@ class MyController < ApplicationController
   include DeviseUserLoginHelper
 
   before_action :authenticate_user!
-  def top; end
+
+  def top
+    redirect_to my_libraries_path
+  end
 end

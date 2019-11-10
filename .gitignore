@@ -38,4 +38,7 @@ config/environments/*.local.yml
 .ruby-gemset.*
 .ruby-version.*
 
+.DS_Store
+erd.png
+coverage
 docs/_build

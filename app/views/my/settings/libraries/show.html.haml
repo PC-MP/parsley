@@ -1,0 +1,32 @@
+%h1.h3.mt-2
+  = t 'page_name.settings_page_for', model_name: @library.name
+
+%ul#myTab.nav.nav-tabs.nav-justified.mt-2{ role: :tablist }
+  %li.nav-item
+    = link_to '#stock', class: 'nav-link active', id: 'stock-tab', role: :tab, data: { toggle: :tab }, aria: { controls: 'stock', selected: true } do
+      %i.fa.fa-book
+      = BookStock.model_name.human
+  %li.nav-item
+    = link_to '#invitation', class: 'nav-link', id: 'invitation-tab', role: :tab, data: { toggle: :tab }, aria: { controls: 'invitation', selected: true } do
+      %i.fa.fa-envelope-open-text
+      = Invitation.model_name.human
+#myTabContent.tab-content.p-3.border.border-1.border-top-0.rounded-bottom
+  #stock.tab-pane.fade.show.active{ role: :tabpanel, aria: { labelledby: 'stock-tab' } }
+    - @library.book_stocks.each do |book_stock|
+      = link_to '#' do
+        = image_tag book_stock.book.image_url, size: '32x45', class: 'border float-left mr-2 mt-1'
+        .align-text-top
+          = book_stock.book.title
+      %hr.clearfix
+    = link_to new_my_library_book_stock_path(library_id: @library.id), class: 'btn btn-outline-secondary btn-block', role: :button do
+      %i.fa.fa-plus
+      = t 'actions.create_for', model_name: BookStock.model_name.human
+
+  #invitation.tab-pane.fade{ role: :tabpanel, aria: { labelledby: 'invitation-tab' } }
+    hohohohohoossss
+
+= link_to edit_my_settings_library_path(id: @library.id), class: 'btn btn-outline-secondary btn-block mt-3', role: :button do
+  = t 'actions.update_for', model_name: @library.name
+
+= link_to my_settings_libraries_path, class: 'btn btn-outline-secondary btn-block mt-3', role: :button do
+  = t 'actions.back_to', page_name: t('page_name.settings_list_page_for', model_name: Library.model_name.human)

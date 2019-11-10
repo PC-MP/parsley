@@ -1,1 +1,12 @@
-= render 'shared/alerts'
+.pt-2
+  = render 'shared/alerts'
+
+  .jumbotron
+    %h1.display-4
+      Hello, world!
+    %p.lead
+      This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.
+
+  = link_to user_slack_omniauth_authorize_path, class: 'btn btn-primary btn-block btn-lg', role: :button do
+    %i.fab.fa-slack.fa-fw
+    = t 'actions.sign_in_with_slack'

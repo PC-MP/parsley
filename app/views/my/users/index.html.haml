@@ -1,0 +1,6 @@
+.card.shadow.mb-4
+  .card-body
+    %my_user_table#my_user_table
+
+- content_for :javascript_links do
+  = javascript_pack_tag 'my_user_table_vue', 'data-turbolinks-track': 'reload', 'data-turbolinks-suppress-warning': 'false'

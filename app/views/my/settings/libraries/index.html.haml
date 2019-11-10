@@ -1,0 +1,25 @@
+%h1.h3.mt-2
+  = t 'page_name.settings_list_page_for', model_name: Library.model_name.human
+.list-group
+  - @libraries.each do |library|
+    = link_to my_settings_library_path(library.id), class: 'list-group-item list-group-item-action' do
+      %h5.d-inline-block
+        = library.name
+      - role = current_user.role_for library
+      - case role
+      - when :owner
+        %span.badge.badge-success
+          = role
+      - when :admin
+        %span.badge.badge-primary
+          = role
+      - when :librarian
+        %span.badge.badge-info
+          = role
+
+= link_to new_my_settings_library_path, class: 'btn btn-outline-secondary btn-lg btn-block mt-3', role: :button do
+  %i.fa.fa-plus
+  = t 'actions.create_for', model_name: Library.model_name.human
+
+= link_to my_top_path, class: 'btn btn-outline-secondary btn-block mt-3', role: :button do
+  = t 'actions.back_to', page_name: t('page_name.top')

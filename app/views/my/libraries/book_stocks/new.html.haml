@@ -1,0 +1,5 @@
+= simple_form_for [:my, @book_stock.library, @book_stock] do |f|
+  = f.input :jan_code
+  = f.input :stock, collection: 1..5
+  = f.button :button, class: 'btn btn-primary btn-block' do
+    hoge

@@ -1,0 +1,17 @@
+%h1.h3.mt-2
+  = t 'page_name.settings_page_for', model_name: @library.name
+
+.card
+  .card-body
+    = simple_form_for [:my, :settings, @library] do |f|
+      = f.input :name
+      = f.button :button, class: 'btn btn-block btn-lg btn-primary' do
+        = t 'actions.update_for', model_name: Library.model_name.human
+
+= link_to my_settings_libraries_path, class: 'btn btn-outline-secondary btn-block mt-3', role: :button do
+  = t 'actions.back_to', page_name: t('page_name.settings_list_page_for', model_name: Library.model_name.human)
+
+%hr
+
+= link_to my_settings_library_path(id: @library.id), class: 'btn btn-outline-danger btn-block mt-3', role: :button, method: :delete do
+  = t 'actions.delete_for', model_name: @library.name

@@ -1,1 +1,22 @@
 = render template: 'layouts/grid_system'
+
+- if user_signed_in?
+  #mySettingsModal.modal.fade{ tabindex: -1, role: :dialog, aria: { labelledby: 'mySettingsModalLabel', hidden: true } }
+    .modal-dialog{ role: :document }
+      .modal-content
+        .modal-header
+          %h5#mySettingsModalLabel.modal-title
+            = t '.my_settings_modal_title'
+          %button.close{ type: :button, data: { dismiss: :modal }, aria: { label: 'Close' } }
+            %span{ aria: { hidden: true } }
+              &times;
+        %ul.modal-body.list-group.list-group-flush.p-0
+          = link_to my_settings_libraries_path do
+            %li.list-group-item
+              aaa
+          = link_to my_settings_libraries_path do
+            %li.list-group-item
+              aaa
+        .modal-footer
+          %button.btn.btn-block.btn-outline-secondary{ type: :button, data: { dismiss: :modal } }
+            = t '.close_button'

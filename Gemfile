@@ -44,7 +44,7 @@ end
 
 gem 'rails-i18n'
 group :development, :test do
-  gem 'rubocop', '0.74.0'
+  gem 'rubocop', '0.78.0'
   gem 'rubocop-checkstyle_formatter', require: false
   gem 'rubocop-junit-formatter'
   gem 'rubocop-rspec'

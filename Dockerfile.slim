@@ -19,7 +19,7 @@ RUN apt-get update -qq && \
 
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
-    curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    curl -sL https://deb.nodesource.com/setup_13.x | bash - && \
     apt-get install -qq -y yarn nodejs
 
 RUN apt-get clean -qq && \
@@ -30,7 +30,9 @@ RUN gem install bundler --no-document
 WORKDIR $APP_ROOT
 COPY Gemfile Gemfile.lock package.json yarn.lock $APP_ROOT/
 
-RUN bundle install --deployment --without development test
+RUN bundle config set deployment 'true' && \
+    bundle config set without 'development test' && \
+    bundle install
 
 RUN yarn install
 
